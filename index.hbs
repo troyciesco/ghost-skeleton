@@ -1,0 +1,19 @@
+{{!< default}}
+{{! The tag above means: insert everything in this file into the body of the default.hbs template }}
+<main>
+    <div>
+        {{#if @custom.demo_prop_on_index_1}}
+			If demo_prop_on_index_1 exists in the custom config, this text shows.
+        {{/if}}
+        {{#if @custom.demo_prop_on_index_2}}
+			If demo_prop_on_index_2 exists in the custom config, this text shows.
+        {{/if}}
+        <div>
+            {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{> "post-card"}}
+            {{/foreach}}
+        </div>
+        {{pagination}}
+    </div>
+</main>
